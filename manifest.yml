@@ -1,0 +1,13 @@
+---
+applications:
+  - name: poh-manager
+    buildpack: predix_openresty_buildpack
+    path: dist
+    memory: 128M
+    stack: cflinuxfs2
+    services:
+            - sit_redis
+            - sit_views
+    env:
+       UAA_SERVER_URL: https://419e9976-f04d-48d1-9459-416e4238ee0d.predix-uaa-staging.grc-apps.svc.ice.ge.com
+       REDIS: p-redis

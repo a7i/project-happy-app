@@ -1,0 +1,39 @@
+<px-deck id="DashboardDeck" context="">    
+	<px-card id="DashboardCard">
+		<div class="layout layout--flush layout--full layout--widget question-container" data-eq-pts="small: 600, large: 900">
+			<h2 class="gamma" ng-bind="surveyQuestion"></h2>
+			<h2>
+				<i ng-hide="surveyQuestion" class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+			</h2>
+			<h6 ng-hide="surveyQuestion" class="epsilon">Please wait while we load an awesome question for you...</h6>
+		</div>
+		<div class="layout layout--flush layout--full layout--widget response-container" data-eq-pts="small: 600, large: 900">
+			<div class="layout__item u-1/6"></div>
+			<div class="layout__item u-1/4">
+				<div class="response-option-container">
+					<a class="fa fa-frown-o fa-10x response-option-icon response-frown" aria-hidden="true" ng-click="optionClicked(1)" ng-class="{ 'fa-spin': showAlert }"></a>
+				</div>
+			</div>
+			<div class="layout__item u-1/4">
+				<div class="response-option-container">
+					<a class="fa fa-meh-o fa-10x response-option-icon response-meh" aria-hidden="true" ng-click="optionClicked(2)" ng-class="{ 'fa-spin': showAlert }"></a>
+				</div>				
+			</div>
+			<div class="layout__item u-1/4">
+				<div class="response-option-container">
+					<a class="fa fa-smile-o fa-10x response-option-icon response-smile" aria-hidden="true" ng-click="optionClicked(3)" ng-class="{ 'fa-spin': showAlert }"></a>
+				</div>	
+			</div>
+			<div class="layout__item u-1/6"></div>
+		</div>
+    </px-card>
+</px-deck>
+<div class="alert-message-container">
+    <px-alert-message 
+	    type="custom" 
+	    ng-show="showAlert" 
+	    message-title="Thank you for taking our survey!" 
+	    class="pull-right">
+	    <i class="fa fa-spinner fa-pulse fa-2x" aria-hidden="true"></i>
+    </px-alert-message>
+</div>
